@@ -447,44 +447,6 @@
 
 // getIndexToIns([40, 60], 50);
 
-//Mutations
-
-// function mutation(arr) {
-//   let newArr1 = arr[0].toLowerCase().split("");
-//   let newArr2 = arr[1].toLowerCase().split("");
-
-//   for (let i = 0; i < newArr2.length; i++) {
-//     if (newArr1.indexOf(newArr2[i]) == -1) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-
-// console.log(mutation(["hello", "hello"]));
-
-// converting to boolean value
-
-// let myNewStr = "hello world";
-// let myNewValue = !!NaN;
-// console.log(myNewValue);
-
-// let egArr = [NaN, undefined, "john", 0, 1];
-
-// let newEgArr = [];
-// for (let i = 0; i < egArr.length; i++) {
-//   newEgArr.push(!!egArr[i]);
-// }
-// console.log(newEgArr);
-
-// let egArr = [NaN, undefined, "john", 0, 1];
-
-// let newEgArr = [];
-// for (let i = 0; i < egArr.length; i++) {
-//   newEgArr.push(Boolean(egArr[i]));
-// }
-// console.log(newEgArr);
-
 // let myIndexArr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
 // console.log(myIndexArr.lastIndexOf(3));
 // console.log(myIndexArr.indexOf(3));
