@@ -463,25 +463,6 @@
 
 // console.log(mutation(["hello", "hello"]));
 
-// Chunky Monkey
-// Write a function that splits an array (first argument) into groups the length of size (second argument)
-//and returns them as a two-dimensional array.
-
-// function chunkArrayInGroups(arr, size) {
-//   let newArr = [];
-
-//   for (let i = 0; i <= arr.length; i++) {
-//     console.log(newArr.push(arr.splice(0, size)));
-//     if (size >= arr.length && arr.length != 0) {
-//       newArr.push(arr.splice(0, arr.length));
-//     }
-//   }
-
-//   console.log(newArr);
-// }
-
-// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
-
 // converting to boolean value
 
 // let myNewStr = "hello world";
@@ -529,55 +510,3 @@
 //   set writer(updatedAuthor) {
 //     this._author = updatedAuthor;
 //   }
-
-// class Thermostat {
-//   constructor(temperature) {
-//     this._temperature = (5 / 9) * (temperature - 32);
-//   }
-//   get temperature() {
-//     return this._temperature;
-//   }
-//   set temperature(celsius) {
-//     this._temperature = celsius;
-//   }
-// }
-// // Only change code above this line
-
-// const thermos = new Thermostat(76); // Setting in Fahrenheit scale
-// let temp = thermos.temperature; // 24.44 in Celsius
-// console.log(temp);
-// thermos.temperature = 26;
-// temp = thermos.temperature; // 26 in Celsius
-// console.log(temp);
-
-// Random integer
-
-// let myInt = [];
-
-// for (let i = 0; i < 1950; i++) {
-//   myInt.push(randomInt(0, 100000000));
-// }
-// console.log(myInt);
-// function randomInt(min, max) {
-//   return Math.floor(Math.random() * (max - min)) + min;
-// }
-
-// let myNewArr = myInt.join(" ");
-// console.log(myNewArr);
-
-// let simpleArr = ["hello", "hi", "goodmorning"];
-// let newSimpleArr = [];
-// for (let i = 0; i < simpleArr.length; i++) {
-//   newSimpleArr.push(simpleArr[i] + " World");
-// }
-// console.log(newSimpleArr);
-
-var myStr = "Hello";
-
-function displayStr() {
-  myStr = "HI";
-  return console.log(myStr);
-}
-
-console.log(myStr);
-console.log(displayStr());
