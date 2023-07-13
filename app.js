@@ -149,35 +149,6 @@
 
 // console.log(factorialize(5));
 
-// function findLongestWordLength(str) {
-//   const newStrArr = str.split(" "); //use .split() method to return array of strings
-//   let longestStr = "";
-//   for (let i = 0; i < newStrArr.length; i++) {
-//     if (newStrArr[i].length > longestStr.length) {
-//       longestStr = newStrArr[i];
-//     }
-//   }
-//   return longestStr.length;
-// }
-
-// console.log(
-//   findLongestWordLength("The quick brown fox jumped over the lazy dog")
-// );
-
-// function findLongestWordLength(str) {
-//     const newStrArr = str.split(" ");
-
-//     let longestStr = newStrArr[0];
-//     for (let i = 1; i < newStrArr.length; i++) {
-//       if (newStrArr[i].length > longestStr.length) {
-//             longestStr = newStrArr[i];
-//     }
-//    }
-//    return longestStr.length;
-//   }
-
-//   findLongestWordLength("The quick brown fox jumped over the lazy dog");
-
 //returns array that has the largest num in it
 // function largestOfFour(arr) {
 //   let newArr = [];
@@ -319,65 +290,6 @@
 // }
 
 // console.log(truncateString("A-tisket a-tasket A green and yellow basket", 2));
-
-//finders keepers
-
-// function findElement(arr, func) {
-//   let num = 0;
-
-//   for (let i = 0; i < arr.length; i++) {
-//     if (func(arr[i])) {
-//       return (num = arr[i]);
-//     } else {
-//       num = undefined;
-//     }
-//   }
-//   return num;
-// }
-
-// console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
-
-//Boo who
-
-// function booWho(bool) {
-//   return bool === true || bool === false ? true : false;
-//   // if (bool === true || bool === false) {
-//   //   return true;
-//   // } else {
-//   //   return false;
-//   // }
-// }
-
-// console.log(booWho(1));
-
-//Title Case a Sentence
-
-// function titleCase(str) {
-//   let myStr = str.toLowerCase();
-//   let newArr = str.split(" ");
-//   let upperArr = [];
-//   for (let i = 0; i < newArr.length; i++) {
-//     upperArr = upperArr + newArr[i][0].toUpperCase();
-//   }
-//   console.log(upperArr);
-//   console.log(newArr);
-//   return str;
-// }
-
-// titleCase("I'm a little tea pot");
-
-// function titleCase(str) {
-//     let myStr = str.toLowerCase();
-//     let newArr = myStr.split(" ");
-
-//     for (let i = 0; i < newArr.length; i++ ) {
-//       newArr[i] = newArr[i][0].toUpperCase() + newArr[i].slice(1)
-//     }
-//     console.log(newArr);
-//     return newArr.join(" ");
-//   }
-
-//   titleCase("I'm a little tea pot");
 
 // function bouncer(arr) {
 //   let mynewarr = [];
