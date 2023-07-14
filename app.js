@@ -101,44 +101,6 @@
 
 // console.log(arrayOfStudents(students));
 
-// let multiArray = [
-//   [
-//     { id: 456, name: "John" },
-//     {
-//       valid: true,
-//       email: "example@test.com",
-//     },
-//   ],
-//   [
-//     {
-//       pets: 2,
-//       hobbies: false,
-//     },
-//   ],
-// ];
-
-// const grades = {
-//   biology: 5,
-//   chemistry: 4,
-//   mathematics: 3,
-// };
-// grades.biology = 4; //changed the value
-// grades["biology"] = 4; //changed the value
-
-// grades.history = 3; // add new key-value pair
-// grades["history"] = 3; // add new key-value pair
-
-// grades["english grammar"] = 3;
-
-// function reverseString(str) {
-//   let revStr = "";
-//   for (let i = 0; i <= str.length - 1; i++) {
-//     revStr = str[i] + revStr;
-//   }
-//   return revStr;
-// }
-
-// console.log(reverseString("hello"));
 // function factorialize(num) {
 //   let newNum = 1;
 //   for (let i = 1; i <= num; i++) {
@@ -148,70 +110,6 @@
 // }
 
 // console.log(factorialize(5));
-
-//returns array that has the largest num in it
-// function largestOfFour(arr) {
-//   let newArr = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (Math.max(...newArr) < Math.max(...arr[i])) {
-//       newArr = arr[i];
-//     }
-//   }
-//   return console.log(newArr);
-// }
-
-// largestOfFour([
-//   [4, 9, 1, 3],
-//   [13, 35, 18, 26],
-//   [32, 35, 97, 39],
-//   [1000000, 1001, 857, 1],
-// ]);
-
-// function largestOfFour(arr) {
-//   let newArr = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     let biggestNum = arr[i][0];
-//     for (let k = 0; k < arr[i].length; k++) {
-//       if (arr[i][k] > biggestNum) {
-//         biggestNum = arr[i][k];
-//       }
-//     }
-//     newArr[i] = biggestNum;
-//   }
-//   return newArr;
-// }
-
-// console.log(
-//   largestOfFour([
-//     [4, 9, 1, 3],
-//     [13, 35, 18, 26],
-//     [32, 35, 97, 39],
-//     [1000000, 1001, 857, 1],
-//   ])
-// );
-
-// function largestOfFour(arr) {
-//   let newArr = [];
-//   for (let i = arr.length - 1; i >= 0; i--) {
-//     let biggestNum = arr[i][0];
-//     for (let k = 0; k < arr[i].length; k++) {
-//       if (arr[i][k] > biggestNum) {
-//         biggestNum = arr[i][k];
-//       }
-//     }
-//     newArr[i] = biggestNum;
-//   }
-//   return newArr;
-// }
-
-// console.log(
-//   largestOfFour([
-//     [4, 9, 1, 3],
-//     [13, 35, 18, 26],
-//     [32, 35, 97, 39],
-//     [1000000, 1001, 857, 1],
-//   ])
-// );
 
 // let myStr = "Bostonian";
 // for (let i = myStr.length - 5; i < myStr.length; i++) {
@@ -267,29 +165,6 @@
 // }
 
 // console.log(repeatStringNumTimes("abC", 1));
-
-//truncate string
-
-// let mystr = "i-";
-// console.log(mystr.length);
-// let mynewstr = "";
-// for (let i = 0; i < 1; i++) {
-//   console.log((mynewstr = mynewstr + mystr[i]));
-// }
-// console.log(mynewstr + "...");
-
-// function truncateString(str, num) {
-//   if (num >= str.length) {
-//     return str;
-//   }
-//   let myNewStr = "";
-//   for (let i = 0; i < num; i++) {
-//     myNewStr += str[i];
-//   }
-//   return myNewStr + "...";
-// }
-
-// console.log(truncateString("A-tisket a-tasket A green and yellow basket", 2));
 
 // function bouncer(arr) {
 //   let mynewarr = [];
