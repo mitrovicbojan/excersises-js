@@ -29,3 +29,44 @@ function myFunction() {
     output.innerText = "Item not available";
   }
 }
+
+const cruises = [
+  {
+    tahiti: [
+      {
+        ship: [
+          {
+            name: "danzig",
+            built: 1992,
+            cabins: [
+              {
+                A: [
+                  {
+                    number: 10,
+                    price: 5000,
+                  },
+                ],
+              },
+              {
+                B: [
+                  {
+                    number: 7,
+                    price: 3000,
+                  },
+                ],
+              },
+              {
+                C: [
+                  {
+                    number: 3,
+                    price: 1000,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
