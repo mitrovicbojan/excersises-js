@@ -6,7 +6,7 @@
 // });
 
 const fruit = {
-  apple: 5,
+  apple: 0,
   orange: 10,
   pineapple: 30,
   banana: 16,
@@ -23,5 +23,9 @@ function myFunction() {
       result += fruit[selectValue];
     }
   }
-  output.innerText = result;
+  if (!result == 0) {
+    output.innerText = `Items available: ${result}`;
+  } else {
+    output.innerText = "Item not available";
+  }
 }
