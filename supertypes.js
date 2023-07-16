@@ -25,3 +25,7 @@ console.log(ParentsHouse.prototype.street()); //1st street
 let myHouse = new ParentsHouse();
 
 console.log(myHouse.street()); //1st street
+
+//Reset an Inherited Constructor Property
+ParentsHouse.prototype.constructor = ParentsHouse;
+console.log(myHouse.constructor); //ƒ ParentsHouse() {}
