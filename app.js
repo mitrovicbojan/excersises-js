@@ -93,3 +93,27 @@ cruises.forEach((element) => {
     }
   }
 });
+
+let myCruises = [
+  {
+    tahiti: {
+      catA: {
+        price: 1000,
+        number: 10,
+      },
+    },
+  },
+];
+
+for (let i in myCruises) {
+  console.log(myCruises[i]);
+  for (let ke in myCruises[i]) {
+    console.log(myCruises[i][ke]);
+    let category = myCruises[i][ke];
+    for (let prop in category) {
+      console.log(category[prop]);
+      console.log(category[prop].price);
+      console.log(category[prop].number);
+    }
+  }
+}
