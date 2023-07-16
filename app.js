@@ -70,3 +70,26 @@ const cruises = [
     ],
   },
 ];
+
+cruises.forEach((element) => {
+  console.log(element.tahiti);
+  let destination = element.tahiti;
+
+  for (let i in destination) {
+    let ships = destination[i];
+
+    for (let k in ships) {
+      let myShip = ships[k];
+      for (let z in myShip) {
+        let myShipObj = myShip[z];
+
+        for (let cat in myShipObj.cabins) {
+          let categories = myShipObj.cabins[cat];
+          for (let a in categories.A) {
+            console.log(categories.A[a].price);
+          }
+        }
+      }
+    }
+  }
+});
