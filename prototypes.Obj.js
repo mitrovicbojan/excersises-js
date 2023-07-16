@@ -33,3 +33,21 @@ console.log(prototypeProperties);
 
 console.log(oilTanker.constructor === Ship); //true
 console.log(oilTanker instanceof Ship); //true - better to use this one
+console.log(Ship.prototype.isPrototypeOf(oilTanker)); //true
+//Change the Prototype to a New Object
+// add more than one properties to pototype
+
+Ship.prototype = {
+  constructor: Ship, //always add constructor
+  flag: function () {
+    return "Greece";
+  },
+  crewNum: function () {
+    return 500;
+  },
+};
+
+console.log(Ship.prototype.flag()); //Greece
+
+console.log(Ship.prototype.isPrototypeOf(oilTanker)); //false
+console.log(Object.prototype.isPrototypeOf(Ship)); //true - always returns true?
