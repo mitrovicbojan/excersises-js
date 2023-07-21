@@ -5,11 +5,13 @@ function Ship(name, size) {
 }
 Ship.prototype.color = "green";
 
-let oilTanker = new Ship("Snoopy", "80m");
-console.log(oilTanker); //prototype: Object
-console.log(oilTanker.color); //green
-// oilTanker.color = "blue";
-console.log(oilTanker); //Ship {name: 'Snoopy', price: 12000, size: '80m', color: 'blue'}
+let oilTanker = new Ship("Tesla", "80m");
+let cruiseShip = new Ship("Victoria", "70m");
+
+console.log(oilTanker.color); // output: green
+console.log(cruiseShip.color); // output: green
+oilTanker.color = "blue";
+console.log(oilTanker); //Ship {name: 'Tesla', price: 12000, size: '80m', color: 'blue'}
 
 // loop - own properties - prototype properties
 
