@@ -25,9 +25,25 @@ function Ship(name) {
 
 Ship.prototype = Object.create(Watercraft.prototype);
 
-let oilTanker = new Ship("Tesla");
+console.log(Ship.prototype.color()); // White
 
+let oilTanker = new Ship("Tesla");
+Ship.prototype.constructor = Ship;
+oilTanker.constructor;
+
+// Override Inherited Methods
+Ship.prototype.color = function () {
+  return "Green";
+};
+
+//Add Methods After Inheritance
+Ship.prototype.guests = function () {
+  return "Guests onboard!";
+};
+
+console.log(oilTanker.constructor);
 console.log(oilTanker.color()); // White
+console.log(oilTanker instanceof Ship); // true
 
 // let oilTanker = Object.create(Watercraft.prototype);
 
