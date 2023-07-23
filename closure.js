@@ -7,6 +7,6 @@ function House() {
   };
 }
 
-let appartment = new House();
+let apartment = new House();
 
 console.log(appartment.getHouseColor());
