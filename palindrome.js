@@ -5,14 +5,22 @@ function palindrome(str) {
       cleanStr += str[i];
     }
   }
-
   cleanStr = cleanStr.replace(/[^0-9a-z]/gi, "");
+  cleanStr = cleanStr.toLowerCase();
+  let revStr = "";
+  for (let i = 0; i <= cleanStr.length - 1; i++) {
+    revStr = cleanStr[i] + revStr;
+  }
 
-  console.log(cleanStr);
-  return true;
+  for (let k = 0; k < cleanStr.length; k++) {
+    if (cleanStr[k] != revStr[0 + k]) {
+      return console.log(false);
+    }
+  }
+  return console.log(true);
 }
 
-palindrome("eye%^&%^ of #the tiger");
+palindrome("almostomla");
 
 // let myStr = "John";
 
