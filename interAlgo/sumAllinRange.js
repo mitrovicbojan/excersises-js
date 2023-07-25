@@ -10,8 +10,12 @@ function sumAll(arr) {
     firstInRange = arr[0];
     lastInRange = arr[arr.length - 1];
   }
+  let sumRange = firstInRange;
   console.log(firstInRange);
-  console.log(lastInRange);
+  for (let i = firstInRange + 1; i <= lastInRange; i++) {
+    sumRange = sumRange + i;
+  }
+  console.log(sumRange);
 }
 
-sumAll([16, 10]);
+sumAll([5, 10]);
