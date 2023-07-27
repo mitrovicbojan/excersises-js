@@ -38,10 +38,12 @@ function myFunction() {
   let category = document.getElementById("category").value;
   let output = document.getElementById("output");
   let outPrice = 0;
+  let avaCabin = 0;
   for (let i in myCruises) {
     let slctDstn = myCruises[i][destination];
     outPrice = slctDstn[category].price;
+    avaCabin = slctDstn[category].number;
   }
   console.log(outPrice);
-  output.innerText = outPrice;
+  output.innerText = `Number of available cabins: ${avaCabin}, at the rate of ${outPrice} per person.`;
 }
