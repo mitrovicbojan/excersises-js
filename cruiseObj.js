@@ -15,22 +15,22 @@ let myCruises = [
       },
     },
   },
-  //   {
-  //     seychelles: {
-  //       A: {
-  //         price: 600,
-  //         number: 11,
-  //       },
-  //       B: {
-  //         price: 400,
-  //         number: 2,
-  //       },
-  //       C: {
-  //         price: 200,
-  //         number: 1,
-  //       },
-  //     },
-  //   },
+  {
+    seychelles: {
+      A: {
+        price: 600,
+        number: 11,
+      },
+      B: {
+        price: 400,
+        number: 2,
+      },
+      C: {
+        price: 200,
+        number: 1,
+      },
+    },
+  },
 ];
 
 function myFunction() {
@@ -39,11 +39,13 @@ function myFunction() {
   let output = document.getElementById("output");
   let outPrice = 0;
   let avaCabin = 0;
-  for (let i in myCruises) {
+  for (let i of myCruises) {
+    console.log(i);
     let slctDstn = myCruises[i][destination];
+
     outPrice = slctDstn[category].price;
     avaCabin = slctDstn[category].number;
   }
-  console.log(outPrice);
+  // console.log(outPrice);
   output.innerText = `Number of available cabins: ${avaCabin}, at the rate of ${outPrice} per person.`;
 }
