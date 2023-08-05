@@ -16,7 +16,7 @@ let myArr = [];
 let newArr = [];
 let countLoop = 0;
 for (let i in secondArr) {
-  if (firstArr[i] in secondArr) {
+  if (firstArr.includes(secondArr[i])) {
     console.log(secondArr[i]);
   } else {
     newArr.push(secondArr[i]);
