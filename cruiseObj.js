@@ -114,20 +114,10 @@ for (let i in keysArr) {
   section.appendChild(options);
   options.append(keysArr[i]);
   options.setAttribute("id", "dest");
-  options.setAttribute("value", `${keysArr[i]}`);
+  options.value = keysArr[i];
 }
 
 function myFunction() {
-  let newOpt = document.getElementById("dest");
-  console.log(newOpt.value);
+  let newOpt = document.getElementById("dest").value;
+  console.log(newOpt);
 }
-// let fruit = ["Apple", "Banana", "Cherry"];
-// let section = document.getElementById("destination");
-
-// for (let i in fruit) {
-//   let options = document.createElement("option");
-
-//   section.appendChild(options);
-//   options.append(fruit[i]);
-// }
-//showing list
