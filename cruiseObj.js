@@ -1,51 +1,63 @@
-let myCruises = [
+// let myCruises = [
+//   {
+//     tahiti: {
+//       A: {
+//         price: 1000,
+//         number: 10,
+//       },
+//       B: {
+//         price: 800,
+//         number: 5,
+//       },
+//       C: {
+//         price: 300,
+//         number: 0,
+//       },
+//     },
+//   },
+//   {
+//     seychelles: {
+//       A: {
+//         price: 600,
+//         number: 11,
+//       },
+//       B: {
+//         price: 400,
+//         number: 2,
+//       },
+//       C: {
+//         price: 200,
+//         number: 1,
+//       },
+//     },
+//   },
+// ];
+
+let destinations = [
   {
-    tahiti: {
-      A: {
-        price: 1000,
-        number: 10,
+    dest: [
+      {
+        tahiti: {
+          A: 1,
+        },
       },
-      B: {
-        price: 800,
-        number: 5,
+      {
+        syechelles: {
+          B: 2,
+        },
       },
-      C: {
-        price: 300,
-        number: 0,
-      },
-    },
-  },
-  {
-    seychelles: {
-      A: {
-        price: 600,
-        number: 11,
-      },
-      B: {
-        price: 400,
-        number: 2,
-      },
-      C: {
-        price: 200,
-        number: 1,
-      },
-    },
+    ],
   },
 ];
 
-function myFunction() {
-  let destination = document.getElementById("destination").value;
-  let category = document.getElementById("category").value;
-  let output = document.getElementById("output");
-  let outPrice = 0;
-  let avaCabin = 0;
-  for (let i of myCruises) {
-    console.log(i);
-    let slctDstn = myCruises[i][destination];
+console.log(destinations);
 
-    outPrice = slctDstn[category].price;
-    avaCabin = slctDstn[category].number;
-  }
-  // console.log(outPrice);
-  output.innerText = `Number of available cabins: ${avaCabin}, at the rate of ${outPrice} per person.`;
+let fruit = ["Apple", "Banana", "Cherry"];
+let section = document.getElementById("destination");
+
+for (let i in fruit) {
+  let options = document.createElement("option");
+
+  section.appendChild(options);
+  options.append(fruit[i]);
 }
