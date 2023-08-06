@@ -33,31 +33,101 @@
 //   },
 // ];
 
-let destinations = [
-  {
-    dest: [
-      {
-        tahiti: {
-          A: 1,
+let cruises = {
+  destinations: [
+    {
+      tahiti: [
+        {
+          name: "Tahiti",
         },
-      },
-      {
-        syechelles: {
-          B: 2,
+        {
+          A: {
+            price: 1000,
+            numAvailable: 5,
+          },
         },
-      },
-    ],
-  },
-];
+        {
+          B: {
+            price: 8000,
+            numAvailable: 7,
+          },
+        },
+        {
+          C: {
+            price: 6000,
+            numAvailable: 3,
+          },
+        },
+      ],
+    },
+    {
+      seychelles: [
+        {
+          name: "Seychelles",
+        },
+        {
+          A: {
+            price: 950,
+            numAvailable: 4,
+          },
+        },
+        {
+          B: {
+            price: 650,
+            numAvailable: 6,
+          },
+        },
+        {
+          C: {
+            price: 350,
+            numAvailable: 1,
+          },
+        },
+        {
+          P: {
+            price: 1500,
+            numAvailable: 1,
+          },
+        },
+      ],
+    },
+  ],
+};
 
-console.log(destinations);
-
-let fruit = ["Apple", "Banana", "Cherry"];
-let section = document.getElementById("destination");
-
-for (let i in fruit) {
-  let options = document.createElement("option");
-
-  section.appendChild(options);
-  options.append(fruit[i]);
+let keysArr = [];
+function getObjKeys(props) {
+  for (let i in props.destinations) {
+    for (let k in props.destinations[i]) {
+      // console.log(k);
+      keysArr.push(k);
+    }
+  }
 }
+
+getObjKeys(cruises);
+console.log(keysArr);
+
+let section = document.getElementById("destination");
+for (let i in keysArr) {
+  let options = document.createElement("option");
+  options.style.textTransform = "Capitalize";
+  section.appendChild(options);
+  options.append(keysArr[i]);
+  options.setAttribute("id", "dest");
+  options.setAttribute("value", `${keysArr[i]}`);
+}
+
+function myFunction() {
+  let newOpt = document.getElementById("dest");
+  console.log(newOpt.value);
+}
+// let fruit = ["Apple", "Banana", "Cherry"];
+// let section = document.getElementById("destination");
+
+// for (let i in fruit) {
+//   let options = document.createElement("option");
+
+//   section.appendChild(options);
+//   options.append(fruit[i]);
+// }
+//showing list
