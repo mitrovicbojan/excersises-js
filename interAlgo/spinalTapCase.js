@@ -6,11 +6,15 @@ function spinalCase(str) {
     mystr += str[i].replace("_", " ");
   }
   console.log(mystr);
-  let arr = str.split(" ");
+  let arr = mystr.split(" ");
   console.log(arr);
   let newStr = "";
-  for (let i in arr) {
-    newStr = arr.join("-");
+
+  newStr = arr.join("-");
+  let extraStr = "";
+  for (let i = 0; i < newStr.length; i++) {
+    if (newStr[i]) {
+    }
   }
 
   return newStr;
