@@ -1,7 +1,12 @@
 //Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
 
 function spinalCase(str) {
-  let arr = str.toLowerCase().split(" ");
+  let mystr = "";
+  for (let i in str) {
+    mystr += str[i].replace("_", " ");
+  }
+  console.log(mystr);
+  let arr = str.split(" ");
   console.log(arr);
   let newStr = "";
   for (let i in arr) {
@@ -11,4 +16,4 @@ function spinalCase(str) {
   return newStr;
 }
 
-spinalCase("This Is Spinal Tap");
+console.log(spinalCase("The_Andy_Griffith_Show"));
