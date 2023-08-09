@@ -12,11 +12,13 @@ function spinalCase(str) {
 
   newStr = arr.join("-");
   let extraStr = "";
-  for (let i = 0; i < newStr.length; i++) {
-    if (newStr[i]) {
+  for (let i = 1; i < newStr.length; i++) {
+    if (newStr[i] == newStr[i].toUpperCase()) {
+      extraStr += newStr[i].toUpperCase();
+      console.log("up");
     }
   }
-
+  console.log(extraStr);
   return newStr;
 }
 
