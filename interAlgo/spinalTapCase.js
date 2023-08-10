@@ -12,7 +12,7 @@ function spinalCase(str) {
 
   newStr = arr.join("-");
   let extraStr = "";
-  for (let i = 1; i < newStr.length; i++) {
+  for (let i = 0; i < newStr.length; i++) {
     if (newStr[i] == newStr[i].toUpperCase()) {
       extraStr += newStr[i].toUpperCase();
       console.log("up");
@@ -23,3 +23,14 @@ function spinalCase(str) {
 }
 
 console.log(spinalCase("The_Andy_Griffith_Show"));
+
+let splitStr = "zagrebGori";
+let cleanStr = "";
+for (let i in splitStr) {
+  if (splitStr[i] != splitStr[i].toUpperCase()) {
+    cleanStr += splitStr[i];
+  } else {
+    cleanStr = cleanStr + " " + splitStr[i];
+  }
+}
+console.log(cleanStr);
