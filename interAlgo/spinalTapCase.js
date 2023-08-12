@@ -24,7 +24,7 @@
 
 // console.log(spinalCase("AllThe-small Things"));
 
-let strHolder = "thisIsSpinalTap";
+let strHolder = "AllThe-small Things";
 
 let newStrHolder = strHolder[0];
 
@@ -35,8 +35,16 @@ for (let i = 1; i < strHolder.length; i++) {
     newStrHolder += " " + strHolder[i];
   }
 }
+let removingStr = "";
+for (let i in newStrHolder) {
+  removingStr += newStrHolder[i].replace("_", "");
+}
+for (let i in newStrHolder) {
+  removingStr += newStrHolder[i].replace(" ", "");
+}
 
 console.log(newStrHolder);
+console.log(removingStr);
 
 let splitArr = newStrHolder.split(" ");
 console.log(splitArr);
