@@ -24,13 +24,19 @@ function spinalCase(str) {
 
 console.log(spinalCase("The_Andy_Griffith_Show"));
 
-let splitStr = "zagrebGori";
-let cleanStr = "";
-for (let i in splitStr) {
-  if (splitStr[i] != splitStr[i].toUpperCase()) {
-    cleanStr += splitStr[i];
-  } else {
-    cleanStr = cleanStr + " " + splitStr[i];
+let strHolder = "zagrebGori";
+
+let newStrHolder = "";
+
+for (let i in strHolder) {
+  if (strHolder[i] == strHolder[i].toUpperCase()) {
+    newStrHolder = strHolder.slice(0, i);
+    for (let k in strHolder) {
+      if (strHolder[k] == strHolder[k].toUpperCase()) {
+        newStrHolder += " " + strHolder.slice(k);
+      }
+    }
   }
 }
-console.log(cleanStr);
+
+console.log(newStrHolder);
