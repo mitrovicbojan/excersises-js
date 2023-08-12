@@ -1,42 +1,44 @@
 //Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
 
-function spinalCase(str) {
-  let mystr = "";
-  for (let i in str) {
-    mystr += str[i].replace("_", " ");
-  }
-  console.log(mystr);
-  let arr = mystr.split(" ");
-  console.log(arr);
-  let newStr = "";
+// function spinalCase(str) {
+//   let mystr = "";
+//   for (let i in str) {
+//     mystr += str[i].replace("_", " ");
+//   }
+//   console.log(mystr);
+//   let arr = mystr.split(" ");
+//   console.log(arr);
+//   let newStr = "";
 
-  newStr = arr.join("-");
-  let extraStr = "";
-  for (let i = 0; i < newStr.length; i++) {
-    if (newStr[i] == newStr[i].toUpperCase()) {
-      extraStr += newStr[i].toUpperCase();
-      console.log("up");
-    }
-  }
-  console.log(extraStr);
-  return newStr;
-}
+//   newStr = arr.join("-");
+//   let extraStr = "";
+//   for (let i = 0; i < newStr.length; i++) {
+//     if (newStr[i] == newStr[i].toUpperCase()) {
+//       extraStr += newStr[i].toUpperCase();
+//       console.log("up");
+//     }
+//   }
+//   console.log(extraStr);
+//   return newStr;
+// }
 
-console.log(spinalCase("The_Andy_Griffith_Show"));
+// console.log(spinalCase("AllThe-small Things"));
 
-let strHolder = "zagrebGori";
+let strHolder = "thisIsSpinalTap";
 
-let newStrHolder = "";
+let newStrHolder = strHolder[0];
 
-for (let i in strHolder) {
-  if (strHolder[i] == strHolder[i].toUpperCase()) {
-    newStrHolder = strHolder.slice(0, i);
-    for (let k in strHolder) {
-      if (strHolder[k] == strHolder[k].toUpperCase()) {
-        newStrHolder += " " + strHolder.slice(k);
-      }
-    }
+for (let i = 1; i < strHolder.length; i++) {
+  if (strHolder[i] == strHolder[i].toLowerCase()) {
+    newStrHolder += strHolder[i];
+  } else if (strHolder[i] == strHolder[i].toUpperCase()) {
+    newStrHolder += " " + strHolder[i];
   }
 }
 
 console.log(newStrHolder);
+
+let splitArr = newStrHolder.split(" ");
+console.log(splitArr);
+let joinedStr = splitArr.join("");
+console.log(joinedStr);
