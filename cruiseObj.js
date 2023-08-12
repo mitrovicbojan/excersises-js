@@ -111,13 +111,14 @@ let section = document.getElementById("destination");
 for (let i in keysArr) {
   let options = document.createElement("option");
   options.style.textTransform = "Capitalize";
+  section.style.textTransform = "Capitalize";
   section.appendChild(options);
   options.append(keysArr[i]);
-  options.setAttribute("id", "dest");
-  options.value = keysArr[i];
+  // options.setAttribute("id", "dest");
+  // options.value = keysArr[i];
 }
 
 function myFunction() {
-  let newOpt = document.getElementById("dest").value;
+  let newOpt = document.getElementById("destination").value;
   console.log(newOpt);
 }
