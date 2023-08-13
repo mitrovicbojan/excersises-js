@@ -45,12 +45,28 @@ for (let cruise of cruisesArr) {
   let options = document.createElement("option");
   options.style.textTransform = "Capitalize";
   section.style.textTransform = "Capitalize";
+
   section.appendChild(options);
   options.append(cruise.destination);
+  options.setAttribute("id", "dest");
 }
+let dest = document.getElementById("dest");
 
-// for (let i of seychellesCabins) {
-//   console.log(i.category);
+section.addEventListener("click", function () {
+  console.log(section);
+});
+for (let cruise of cruisesArr) {
+  if (cruise.destination == "tahiti") {
+    for (let cat of cruise.ship.cabins) {
+      console.log(cat.category);
+      let cabinCatOpt = document.createElement("option");
+      category.appendChild(cabinCatOpt);
+      cabinCatOpt.append(cat.category);
+    }
+  }
+}
+console.log(cruisesArr[0].ship.cabins[0].category);
+// for (let i of tahiticabins) {
 //   let cabinCatOpt = document.createElement("option");
 //   category.appendChild(cabinCatOpt);
 //   cabinCatOpt.append(i.category);
@@ -58,5 +74,7 @@ for (let cruise of cruisesArr) {
 
 function myFunction() {
   let newOpt = document.getElementById("destination").value;
+  let selectedCabin = document.getElementById("category").value;
+  console.log(selectedCabin);
   console.log(newOpt);
 }
