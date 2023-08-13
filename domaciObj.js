@@ -48,23 +48,30 @@ for (let cruise of cruisesArr) {
 
   section.appendChild(options);
   options.append(cruise.destination);
-  options.setAttribute("id", "dest");
 }
-let dest = document.getElementById("dest");
 
-section.addEventListener("click", function () {
-  console.log(section);
-});
-for (let cruise of cruisesArr) {
-  if (cruise.destination == "tahiti") {
-    for (let cat of cruise.ship.cabins) {
-      console.log(cat.category);
-      let cabinCatOpt = document.createElement("option");
-      category.appendChild(cabinCatOpt);
-      cabinCatOpt.append(cat.category);
+window.addEventListener("load", function () {
+  console.log(section.value);
+  for (let cruise of cruisesArr) {
+    if (cruise.destination == section.value) {
+      for (let cat of cruise.ship.cabins) {
+        let cabinCatOpt = document.createElement("option");
+        category.appendChild(cabinCatOpt);
+        cabinCatOpt.append(cat.category);
+      }
     }
   }
-}
+});
+// for (let cruise of cruisesArr) {
+//   if (cruise.destination == "tahiti") {
+//     for (let cat of cruise.ship.cabins) {
+//       console.log(cat.category);
+//       let cabinCatOpt = document.createElement("option");
+//       category.appendChild(cabinCatOpt);
+//       cabinCatOpt.append(cat.category);
+//     }
+//   }
+// }
 console.log(cruisesArr[0].ship.cabins[0].category);
 // for (let i of tahiticabins) {
 //   let cabinCatOpt = document.createElement("option");
