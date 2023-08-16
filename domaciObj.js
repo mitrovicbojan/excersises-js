@@ -68,6 +68,7 @@ section.addEventListener("change", function () {
       for (let cat of cruise.ship.cabins) {
         console.log(cat.category);
         let cabinCatOpt = document.createElement("option");
+        category.remove(cabinCatOpt);
         category.appendChild(cabinCatOpt);
         cabinCatOpt.append(cat.category);
       }
