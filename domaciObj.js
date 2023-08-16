@@ -50,21 +50,21 @@ for (let cruise of cruisesArr) {
   options.append(cruise.destination);
 }
 
-window.addEventListener("load", function () {
-  console.log(section.value);
-  for (let cruise of cruisesArr) {
-    if (cruise.destination == section.value) {
-      for (let cat of cruise.ship.cabins) {
-        let cabinCatOpt = document.createElement("option");
-        category.appendChild(cabinCatOpt);
-        cabinCatOpt.append(cat.category);
-      }
+// window.addEventListener("load", function () {
+console.log(section.value);
+for (let cruise of cruisesArr) {
+  if (cruise.destination == section.value) {
+    for (let cat of cruise.ship.cabins) {
+      let cabinCatOpt = document.createElement("option");
+      category.appendChild(cabinCatOpt);
+      cabinCatOpt.append(cat.category);
     }
   }
-});
+}
+// });
 section.addEventListener("change", function () {
   for (let cruise of cruisesArr) {
-    if (section.value == "seychelles") {
+    if (section.value == cruise.destination) {
       for (let cat of cruise.ship.cabins) {
         console.log(cat.category);
         let cabinCatOpt = document.createElement("option");
