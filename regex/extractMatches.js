@@ -50,3 +50,10 @@ let atRegex = /[a-e]at/i;
 console.log(catStr.match(atRegex));
 console.log(hatStr.match(atRegex));
 console.log(batStr.match(atRegex));
+
+//Match Numbers and Letters of the Alphabet
+
+let danzigStr = "Danzig221984";
+let danRegex = /[a-z0-9]/gi;
+danzigStr.match(danRegex);
+console.log(danzigStr.match(danRegex));
