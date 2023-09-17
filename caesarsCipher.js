@@ -1,28 +1,45 @@
 //Caesars Cipher
 
 let cipher = {
-  A: "1",
-  B: "2",
-  C: "3",
-  D: "4",
-  E: "5",
-  F: "6",
-  G: "7",
+  A: "N",
+  B: "O",
+  C: "P",
+  D: "Q",
+  E: "R",
+  F: "S",
+  G: "T",
+  H: "U",
+  I: "V",
+  J: "W",
+  K: "X",
+  L: "Y",
+  M: "Z",
+  N: "A",
+  O: "B",
+  P: "C",
+  Q: "D",
+  R: "E",
+  S: "F",
+  T: "G",
+  U: "H",
+  V: "I",
+  W: "J",
+  X: "K",
+  Y: "L",
+  Z: "M",
 };
 
 function makeNewStr(str) {
   let myNewStr = "";
   str = str.toUpperCase();
   for (let i in str) {
-    for (let k in cipher) {
-      if (str[i] == k) {
-        myNewStr += cipher[k];
-      } else if (str[i] === " ") {
-        myNewStr += str[i];
-      }
+    if (str[i] in cipher) {
+      myNewStr += cipher[str[i]];
+    } else if ((str[i] == " ") ^ (str[i] == "!")) {
+      myNewStr += str[i];
     }
   }
   console.log(myNewStr);
 }
 
-console.log(makeNewStr("c xg"));
+console.log(makeNewStr("SERR CVMMN!"));
