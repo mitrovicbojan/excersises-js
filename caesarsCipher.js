@@ -39,7 +39,7 @@ function makeNewStr(str) {
       myNewStr += str[i];
     }
   }
-  console.log(myNewStr);
+  return myNewStr;
 }
 
 console.log(makeNewStr("SERR CVMMN!"));
