@@ -11,12 +11,14 @@ function translatePigLatin(str) {
       newStr += str;
       return newStr + "way";
     } else {
-      for (let i in str) {
+      for (let i = 1; i < str.length; i++) {
+        newStr += str[i];
       }
+      return newStr + str[0] + "ay";
     }
     return newStr;
   }
 }
 
-translatePigLatin("aga");
+// translatePigLatin("aga");
 console.log(translatePigLatin("aga"));
