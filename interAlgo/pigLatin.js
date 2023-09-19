@@ -1,6 +1,6 @@
 //Pig Latin
 
-let vowelArr = ["a", "e", "i", "o", "u"];
+let vowelArr = ["a", "e", "i", "o", "u"]; // maybe add "y"
 
 function translatePigLatin(str) {
   let zeroStr = str[0];
