@@ -4,11 +4,18 @@ let myYear = 1996;
 
 let testDate = new Date(myYear, newMonth, newDay);
 console.log(testDate);
-const myDate = new Date("1997-15-05");
+const myDate = new Date("05-15-2022");
 console.log(myDate);
 let newYear = 2001;
-let newDate = myDate.getFullYear();
-console.log(newYear - newDate);
+let newDate = myDate.getDate();
 
-let checkDate = new Date("2023/02/31");
-console.log(checkDate.getFullYear());
+console.log(newDate);
+
+let setDays = [31, 30, 31, 30, 31, 30, 30, 30, 30, 31];
+
+let count = 0;
+
+for (let i = 0; i < 5; i++) {
+  count += setDays[i];
+}
+console.log(count);
