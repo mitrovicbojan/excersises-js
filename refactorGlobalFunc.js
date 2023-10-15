@@ -39,7 +39,10 @@ function addNum(myNum) {
   return res;
 }
 
-console.log(addNum(5));
+// console.log(addNum(5));
+
+let resFunc = addNum(myNum);
+console.log(typeof resFunc);
 
 function resue(add) {
   let count = addNum(add) + 2;
