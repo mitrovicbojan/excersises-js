@@ -142,7 +142,8 @@ const watchList = [
 // Only change code below this line
 
 const ratings = watchList.map(({ Title, imdbRating }) => ({
-  [Title]: imdbRating,
+  title: Title,
+  rating: imdbRating,
 }));
 // Only change code above this line
 
