@@ -1,18 +1,14 @@
 // Seek and Destroy
 
 function destroyer(...args) {
-  console.log(args);
-  let newArr = args.splice(0, 1);
-  let restArr = args.splice(0, args.length);
-  let firstArr = newArr[0];
-  let outPut = [];
-  console.log(newArr);
-  console.log(firstArr);
+  let newArr = [...args[0]];
+  let restArr = args.slice(1, args.length);
 
-  for (let i in firstArr) {
-    if ((firstArr[i] = restArr[i])) {
-    }
-  }
+  let filtered = newArr.filter(function (value) {
+    return !restArr.includes(value);
+  });
+  return filtered;
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
