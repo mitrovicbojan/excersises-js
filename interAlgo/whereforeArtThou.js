@@ -12,7 +12,7 @@ function whatIsInAName(collection, source) {
       }
     }
   }
-  console.log(newArr);
+
   return newArr;
 }
 

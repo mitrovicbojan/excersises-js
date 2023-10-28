@@ -3,22 +3,21 @@
 let vowelArr = ["a", "e", "i", "o", "u"]; // maybe add "y"
 
 function translatePigLatin(str) {
-  let zeroStr = str[0];
   let newStr = "";
+  let cons = "";
 
-  for (let i in vowelArr) {
-    if (vowelArr[i] == zeroStr) {
+  for (let i = 0; i < vowelArr.length; i++) {
+    if (vowelArr[i] == str[0]) {
       newStr += str;
       return newStr + "way";
-    } else {
-      for (let i = 1; i < str.length; i++) {
-        newStr += str[i];
-      }
-      return newStr + str[0] + "ay";
     }
-    return newStr;
   }
+  for (let i = 0; i < vowelArr.length; i++) {
+    if (str[i] !== vowelArr[i]) {
+      cons += str[i];
+    }
+  }
+  console.log(cons);
 }
 
-// translatePigLatin("aga");
-console.log(translatePigLatin("aga"));
+console.log(translatePigLatin("schwartz"));
