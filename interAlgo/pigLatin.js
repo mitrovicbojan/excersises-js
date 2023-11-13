@@ -3,21 +3,23 @@
 let vowelArr = ["a", "e", "i", "o", "u"];
 
 function translatePigLatin(str) {
-  let inx = 1;
-  let newStr = str.slice(0, inx);
-  let rest = str.slice(inx);
-
+  let allC = "";
   if (vowelArr.includes(str[0])) {
     return str + "way";
   }
-  for (let i = 0; i < str.length; i++) {
-    if (!vowelArr.includes(str[i])) {
-      console.log(i);
-      inx + 1;
+  for (let i in str) {
+    if (vowelArr.includes(str[i])) {
+      let strInx = str.indexOf(str[i]);
+      console.log(strInx);
+      let strLen = str.length;
+      let rest = str.slice(strInx, strLen);
+      let newStr = str.slice(0, strInx);
+
+      return rest + newStr + "ay";
+    } else {
+      allC += str[i];
     }
   }
-  console.log(inx);
-  return rest + newStr + "ay";
+  return allC + "ay";
 }
-
-console.log(translatePigLatin("california"));
+console.log(translatePigLatin("rythm"));
