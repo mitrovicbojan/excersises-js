@@ -11,8 +11,8 @@ function translatePigLatin(str) {
     if (vowelArr.includes(str[i])) {
       let strInx = str.indexOf(str[i]);
       console.log(strInx);
-      let strLen = str.length;
-      let rest = str.slice(strInx, strLen);
+      // let strLen = str.length;
+      let rest = str.slice(strInx, str.length);
       let newStr = str.slice(0, strInx);
 
       return rest + newStr + "ay";
