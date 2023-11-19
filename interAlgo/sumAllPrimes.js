@@ -2,7 +2,8 @@
 
 function sumPrimes(num) {
   let numArr = [...Array(num + 1).keys()];
-
+  let result = 0;
+  let primes = numArr.filter(isPrime);
   function isPrime(prop) {
     if (prop < 2) return false;
     for (var i = 2; i < prop; i++) {
@@ -10,10 +11,11 @@ function sumPrimes(num) {
     }
     return prop > 1;
   }
-
-  let primes = numArr.filter(isPrime);
-
-  console.log(primes);
+  for (let k in primes) {
+    result += primes[k];
+  }
+  console.log(result);
+  return result;
 }
 
 console.log(sumPrimes(10));
