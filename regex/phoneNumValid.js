@@ -9,7 +9,7 @@
 
 // ("1 555-555-5555") ok
 // ("1 (555) 555-5555") ok
-//("1(555)555-5555")
+//("1(555)555-5555") ok
 // return true or false
 
 function telephoneCheck(str) {

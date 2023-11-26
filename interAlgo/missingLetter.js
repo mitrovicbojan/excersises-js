@@ -1,8 +1,15 @@
 //Missing letters
-let arr = [1, 2, 3, 4, 5, 6];
-let arr2 = [5, 7];
-let res = arr.filter((el) => arr2.includes(el)); //same element included in arr
-let res2 = arr.filter((el) => !arr2.includes(el)); //elements that are not the same
+function fearNotLetter(str) {
+  let wholeAbc = "abcdefghijklmnopqrstuvwxyz";
+  let firstIndex = wholeAbc.indexOf(str[0]);
 
-arr.indexOf(6);
-console.log(res);
+  let correctStr = wholeAbc.slice(firstIndex, firstIndex + str.length);
+
+  for (let i in correctStr) {
+    if (!str.includes(correctStr[i])) {
+      return correctStr[i];
+    }
+  }
+}
+
+console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
