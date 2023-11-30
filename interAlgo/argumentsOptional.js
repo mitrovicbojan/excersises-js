@@ -1,7 +1,8 @@
 // Arguments Optional
-function addTogether(num, num2) {
-  console.log(num);
-  console.log(num2);
+
+function addTogether() {
+  let props = [...arguments]; //ju ladno!! slucajno sam nasao ovu foru
+  console.log(props);
 }
 
-console.log(addTogether(2));
+console.log(addTogether(2, 3));
