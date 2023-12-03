@@ -5,10 +5,11 @@ function sumFibs(num) {
 console.log(sumFibs(4));
 
 function fibs(num) {
-  let fibsArr = [];
+  let fibsArr = [0, 1];
   let firstNum = 0;
   let secondNum = 1;
   let nextNum = num;
+  let fibSum = 0;
 
   for (let i = 2; i <= num; i++) {
     nextNum = firstNum + secondNum;
@@ -16,7 +17,13 @@ function fibs(num) {
     secondNum = nextNum;
     fibsArr.push(nextNum);
   }
-  console.log(fibsArr);
+
+  for (let i in fibsArr) {
+    if ((fibsArr[i] % 2 === 1) & (fibsArr[i] <= num)) {
+      fibSum += fibsArr[i];
+    }
+  }
+  return fibSum;
 }
 
-console.log(fibs(10));
+console.log(fibs(75025));
