@@ -8,12 +8,14 @@ function addTogether() {
   console.log(firstNum);
   console.log(secondNum);
 
-  if ((typeof firstNum === "number") & (typeof secondNum === "number")) {
-    return firstNum + secondNum;
-  }
-  if (props.length === 1) {
-    return "shit";
+  if (typeof firstNum === "number") {
+    if (typeof secondNum === "number") {
+      return firstNum + secondNum;
+    }
+    if (props.length === 1) {
+      return (secondNum) => addTogether(firstNum, secondNum);
+    }
   }
 }
 
-console.log(addTogether(2));
+console.log(addTogether(2, 3));
