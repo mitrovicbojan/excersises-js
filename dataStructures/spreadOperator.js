@@ -40,6 +40,10 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  },
 };
 
 restaurant.orderDelivery({
@@ -53,35 +57,39 @@ restaurant.orderDelivery({
   address: "2nd street",
 });
 
-//destructuring Obj
-const { name, openingHours, categories } = restaurant;
+//creating new arr based on an existing array
 
-console.log(name, openingHours, categories);
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+//copy arr
 
-//default values
+const mainMenuCopy = [...restaurant.mainMenu];
 
-const { menu = [], starterMenu: starters = [] } = restaurant;
+// join two arrays
 
-console.log(starters);
+const greekMenu = ["Souvlaki", "Kalamakia", "Saganaki"];
 
-//mutating variables
+const joinMenu = [...restaurant.mainMenu, ...greekMenu];
+console.log(joinMenu);
 
-let a = 111;
-let b = 999;
-const myObj = { a: 23, b: 7, c: 14 };
-({ a, b } = myObj);
-console.log(a, b);
+//add method
 
-//nested obj
+// const ingredients = [
+//   prompt("Lets make pasta! Ingredient 1?"),
+//   prompt("Ingredient 2?"),
+//   prompt("Ingredient 3?"),
+// ];
 
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+
+const newRestaurant = { ...restaurant, founder: "Pinokio" };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+
+restaurantCopy.name = "Pinokio Pizza";
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
