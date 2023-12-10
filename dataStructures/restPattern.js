@@ -98,3 +98,31 @@ add(...x);
 
 restaurant.orderPizza("mushrooms", "onion", "olives", "bacon");
 restaurant.orderPizza("peppers");
+
+// OR operator
+
+restaurant.numGuests = 0; // 0 is a falsy value so the function will return 10
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests);
+
+//Nullish: null and undefined(Not 0 or "")
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+// AND operator
+
+console.log(0 && "Djole"); //only if both true will return true
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza("bacon", "tomato");
+}
+
+restaurant.orderPizza && restaurant.orderPizza("beans", "mushrooms");
