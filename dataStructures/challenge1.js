@@ -74,3 +74,16 @@ console.log(team1);
 //6. write a function ('printGoals') that receives an arbitrary number of player names
 //Not an array, and prints each of them on the console,along with the number of
 //goals that were scored (number of player names passed in)
+
+const printGoals = function (...players) {
+  console.log(`${players.length} goals scored`);
+};
+printGoals(...game.scored);
+printGoals("Lewandowski", "Gnarby", "Lewandowski", "Hummels");
+
+//7. the team with the lower odd is more likley to win.
+//print to the console which team is more likley to win,
+//without using an if/else statement or the ternary operator.
+
+team1 < team2 && console.log("team1 is more likely to to win");
+team1 > team2 && console.log("team2 is more likely to to win");
