@@ -51,3 +51,32 @@ for (let [goal, name] of game.scored.entries()) {
 }
 
 //2. Use loop o calculate the avrage odd and log it
+
+let avgNums = Object.entries(game.odds);
+console.log(avgNums);
+let avgArr = [];
+let sum = 0;
+for (let [key, nums] of avgNums) {
+  avgArr.push(nums);
+}
+console.log(avgArr);
+for (let i in avgArr) {
+  sum += avgArr[i];
+}
+let avgArrResult = sum / avgArr.length;
+console.log(avgArrResult);
+
+//second way
+
+let newObj = game.odds;
+
+let sumObj = 0;
+let objArr = [];
+
+for (let k in newObj) {
+  sumObj += newObj[k];
+  objArr.push(newObj[k]);
+}
+
+let newRes = sumObj / objArr.length;
+console.log(newRes);
