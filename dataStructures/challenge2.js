@@ -80,3 +80,31 @@ for (let k in newObj) {
 
 let newRes = sumObj / objArr.length;
 console.log(newRes);
+
+//using reduce
+let reduceArr = objArr.reduce((a, b) => a + b);
+console.log(reduceArr);
+
+let reduceRes = reduceArr / objArr.length;
+console.log(reduceRes);
+
+//3. print the 3 odds to the console
+// in a following way
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+//get the team names diresctly from the game object,
+//don't hardcode hem (except for 'draw').
+//HInt: note how the odds and the game objects have the same property names
+
+//Bonus: create an object called 'scorrers'
+// which contains the names of the players
+//who scored as poperties
+//and the number of goals as the value
+// in this game, it will look like this:
+// {
+//   Gnarby:1,
+//   Hummels:1,
+//   Lewandowski:2,
+
+// }
