@@ -97,6 +97,10 @@ console.log(reduceRes);
 //don't hardcode hem (except for 'draw').
 //HInt: note how the odds and the game objects have the same property names
 
+console.log(`Odd of victory ${game.team1}: ${game.odds?.team1}`);
+console.log(`Odd of draw: ${game.odds?.x}`);
+console.log(`Odd of victory ${game.team2}: ${game.odds?.team2}`);
+
 //Bonus: create an object called 'scorrers'
 // which contains the names of the players
 //who scored as poperties
@@ -108,3 +112,13 @@ console.log(reduceRes);
 //   Lewandowski:2,
 
 // }
+//find duplicates and create obj
+const scorrers = game.scored.reduce(
+  (acc, value) => ({
+    ...acc,
+    [value]: (acc[value] || 0) + 1,
+  }),
+  {}
+);
+
+console.log(scorrers);
