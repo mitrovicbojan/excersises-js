@@ -39,6 +39,10 @@ for (let time in gameKeys) {
 const avgEvent = Math.floor(eventLog / 90);
 console.log(`An event happened, on average, every ${avgEvent} minutes`);
 
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+
 /* 
 4. Loop over the events and log them to the console, 
 marking whether it's in the first half or second half (after 45 min) of the game, like this:
@@ -51,4 +55,9 @@ for (let event of gameEvents.keys()) {
   } else {
     console.log(`[Second half] ${event}: ${gameEvents.get(event)}`);
   }
+}
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? "First" : "Second";
+  console.log(`[${half} HALF] ${min}: ${event}`);
 }
