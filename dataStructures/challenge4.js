@@ -36,6 +36,9 @@ document.body.append(document.createElement("textarea"));
 const text = document.querySelector("textarea").value;
 document.body.append(document.createElement("button"));
 
+//another way to get btn
+//document.querySelector('button').addEventListener
+
 const btn = document.getElementsByTagName("button");
 btn[0].id = "btn";
 
