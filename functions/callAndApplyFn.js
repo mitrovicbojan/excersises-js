@@ -49,3 +49,48 @@ console.log(swiss);
 
 //modern
 book.call(swiss, ...flightData);
+
+// the bind method
+//returns new function
+
+const bookEW = book.bind(eurowings);
+bookEW(555, "Steven Williams");
+const bookSW = book.bind(swiss);
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23("Jeff Lebowski");
+
+// with event listeners
+
+lufthans.planes = 300;
+lufthans.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+
+  console.log(this.planes);
+};
+// lufthans.buyPlane();
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthans.buyPlane.bind(lufthans));
+
+// partial application
+//order of the args is important
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+//same as
+//const addVAT = (value) => value + value * 0.23;
+
+console.log(addVAT(100));
+
+//challenge
+
+const rtnFn =
+  (rate = 0.23) =>
+  (value) =>
+    console.log(value + value * rate);
+
+const newTax = rtnFn();
+newTax(100);
