@@ -35,4 +35,24 @@ ferryBooking();
 
 //const ferryBooking = function (paxNum = 1, ferryName = "Poseidon", price = 50)
 
-//passing arguments
+//passing arguments - value vs reference
+
+const ferryBoat = "Poseidon";
+const passenger = {
+  name: "John Smith",
+  passportNum: 5468755467,
+};
+
+const boarding = function (ferryBoat, passenge) {
+  ferryBoat = "Diogenis"; //new variable
+  passenge.name = "Mr " + passenge.name; //manipulate copy of the obj because it is the same in the memeory
+
+  // if (passenge.passportNum === 5468755467) {
+  //   alert("Welcome aboard!");
+  // } else {
+  //   alert("Wrong passport number!");
+  // }
+};
+boarding(ferryBoat, passenger);
+console.log(ferryBoat);
+console.log(passenger);
