@@ -56,3 +56,46 @@ const boarding = function (ferryBoat, passenge) {
 boarding(ferryBoat, passenger);
 console.log(ferryBoat);
 console.log(passenger);
+
+const joinStr = function (str) {
+  return str.replaceAll(" ", "").toLowerCase();
+};
+
+console.log(joinStr("java script"));
+
+const upperStr = function (str) {
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
+};
+
+console.log(upperStr("hello world"));
+
+//
+const transformStr = function (str, func) {
+  console.log(`Mutated string: ${func(str)}`);
+};
+
+transformStr("hello world", upperStr);
+transformStr("hello world", joinStr);
+
+const sayHi = function () {
+  console.log(`Hello`);
+};
+
+document.body.addEventListener("click", sayHi);
+
+// function returns function
+
+const sayHello = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greet = sayHello("Hello");
+
+greet("Tom");
+
+//one go
+sayHello("hi")("Sam");
+
+// call and apply method
