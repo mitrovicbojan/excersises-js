@@ -42,3 +42,23 @@ movemnets.forEach(function (movement, index, array) {
     console.log(`Movement ${index + 1}: you withdrew ${Math.abs(movement)}`);
   }
 });
+
+//MAP
+const currencies = new Map([
+  ["USD", "United States dollar"],
+  ["EUR", "Euro"],
+  ["GBP", "Pound sterling"],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+//SET
+//set doesnt have keys nor index values
+const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
+console.log(currenciesUnique);
+
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}: ${value}`);
+});
