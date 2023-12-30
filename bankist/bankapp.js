@@ -75,6 +75,7 @@ const currencies = new Map([
 
 /////////////////////////////////////////////////
 
+//dispaly transactions
 const dispalyMovements = function (movements) {
   containerMovements.innerHTML = "";
 
@@ -92,3 +93,18 @@ const dispalyMovements = function (movements) {
   });
 };
 dispalyMovements(account1.movements);
+
+//computing usernames
+
+const createUsernames = function (accs) {
+  accs.forEach((acc) => {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
