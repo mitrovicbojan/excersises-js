@@ -92,7 +92,7 @@ const dispalyMovements = function (movements) {
     containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 };
-dispalyMovements(account1.movements);
+// dispalyMovements(account1.movements);
 
 //computing usernames
 
@@ -115,26 +115,26 @@ const calcPrintBalance = function (movements) {
   labelBalance.textContent = `${balance} €`;
 };
 
-calcPrintBalance(account1.movements);
+// calcPrintBalance(account1.movements);
 
 // display summery
 
-const clacDisplaySummary = function (movements) {
-  const incomes = movements
+const clacDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumIn.textContent = `${incomes}€`;
 
-  const out = movements
+  const out = acc.movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumOut.textContent = `${Math.abs(out)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter((mov) => mov > 0)
-    .map((deposit) => (deposit * 1.2) / 100)
+    .map((deposit) => (deposit * acc.interestRate) / 100)
     .filter((interest, i, arr) => {
       return interest >= 1;
     })
@@ -142,4 +142,34 @@ const clacDisplaySummary = function (movements) {
 
   labelSumInterest.textContent = `${interest}€`;
 };
-clacDisplaySummary(movements);
+// clacDisplaySummary(movements);
+
+// Event handler
+let currentAccount;
+
+btnLogin.addEventListener("click", function (e) {
+  //prevent form from submitting
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //display UI and welcome msg
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.style.opacity = 100;
+    // clear the input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
+
+    //display movements
+    dispalyMovements(currentAccount.movements);
+    //display balance
+    calcPrintBalance(currentAccount.movements);
+    //display summary
+    clacDisplaySummary(currentAccount);
+  }
+});
