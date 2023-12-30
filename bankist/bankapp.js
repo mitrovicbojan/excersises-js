@@ -71,7 +71,7 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -86,7 +86,7 @@ const dispalyMovements = function (movements) {
           <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-          <div class="movements__value">${mov}</div>
+          <div class="movements__value">${mov}€</div>
         </div>
     `;
     containerMovements.insertAdjacentHTML("afterbegin", html);
@@ -116,3 +116,30 @@ const calcPrintBalance = function (movements) {
 };
 
 calcPrintBalance(account1.movements);
+
+// display summery
+
+const clacDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter((mov) => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumIn.textContent = `${incomes}€`;
+
+  const out = movements
+    .filter((mov) => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+
+  const interest = movements
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((interest, i, arr) => {
+      return interest >= 1;
+    })
+    .reduce((acc, interest) => acc + interest, 0);
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+clacDisplaySummary(movements);
