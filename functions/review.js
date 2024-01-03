@@ -26,15 +26,18 @@ const ferryBooking = function (paxNum, ferryName, price) {
     ferryName,
     price,
   };
-  console.log(reservation);
-  //paxNum: undefined, vehicle: undefined, price: undefined
   reservations.push(reservation);
 };
-console.log(reservations);
 ferryBooking();
+console.log(reservations);
+//paxNum: undefined, vehicle: undefined, price: undefined
 
-//const ferryBooking = function (paxNum = 1, ferryName = "Poseidon", price = 50)
+paxNum = paxNum || 1;
+ferryName = ferryName || "Poseidon";
+price = price || 50;
 
+// const ferryBooking = function (paxNum = 1, ferryName = "Poseidon", price = 50)
+ferryBooking(5, undefined, 250);
 //passing arguments - value vs reference
 
 const ferryBoat = "Poseidon";
