@@ -76,10 +76,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 
 //dispaly transactions
-const dispalyMovements = function (movements) {
+const dispalyMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `
         <div class="movements__row">
@@ -237,3 +239,53 @@ btnClose.addEventListener("click", function (e) {
   }
   inputCloseUsername.value = inputClosePin.value = "";
 });
+
+let sorted = false;
+
+btnSort.addEventListener("click", function (e) {
+  e.preventDefault();
+  dispalyMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
+const accountMovements = accounts.map((acc) => acc.movements);
+
+console.log(accountMovements);
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+
+const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+//chaining
+const overalBalance = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overalBalance);
+
+//flatMap
+//only goes one lvl deep
+const overBalance = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overBalance);
+
+// sort() method - sorts strings A to Z
+//doesnt work on numbers, need a callback fn
+console.log(movements);
+const sortedMov = movements.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  }
+  if (b > a) {
+    return -1;
+  }
+});
+console.log(sortedMov);
+
+//another way
+const sortMov = movements.sort((a, b) => a - b);
+console.log(sortMov);
