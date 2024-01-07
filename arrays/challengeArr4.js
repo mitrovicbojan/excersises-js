@@ -27,7 +27,7 @@ in the owners array, and so this one is a bit tricky
 3. Create an array containing all owners of dogs who
 eat too much ('ownersEatTooMuch') and an array with
 all owners of dogs who eat too little 
-('ownerEatTooLittle')
+('ownersEatTooLittle')
 
 4. Log a string to the console for each array created
 in 3., like this: "Matilda and Alice and Bob's dogs
@@ -57,3 +57,45 @@ const dogs = [
     {weight: 32, curFood: 340, owners: ['Michael']},
 ];
 */
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
+];
+
+console.log(dogs);
+
+//1.
+dogs.forEach((dog) => {
+  dog.recommendedFood = Number((dog.weight ** 0.75 * 28).toFixed(2));
+});
+console.log(dogs);
+
+//2.
+dogs.forEach((owner) => {
+  const ownerArr = owner.owners.some((oneOwner) => oneOwner == "Sarah")
+    ? console.log(owner.owners)
+    : owner;
+});
+
+//3.
+/*
+Eating an okay amount means the dog's current food
+portion is within a range 10% above and 10% below the
+recommended portion (see hint).
+*/
+const ownersEatTooMuch = [];
+const ownersEatTooLittle = [];
+dogs.map((dog) => {
+  if (dog.curFood * 0.9 > dog.recommendedFood) {
+    ownersEatTooLittle.push(dog.owners);
+  } else {
+    ownersEatTooMuch.push(dog.owners);
+  }
+});
+console.log(ownersEatTooLittle);
+console.log(ownersEatTooMuch);
+
+//4.
