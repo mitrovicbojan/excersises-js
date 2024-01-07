@@ -289,3 +289,38 @@ console.log(sortedMov);
 //another way
 const sortMov = movements.sort((a, b) => a - b);
 console.log(sortMov);
+
+//Array.from()
+
+labelBalance.addEventListener("click", function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => Number(el.textContent.replace("€", ""))
+  );
+  console.log(movementsUI);
+
+  //do mapping seperatley
+
+  const movementsUI2 = [...document.querySelectorAll(".movements__value")];
+});
+
+//Practice
+//.1
+const bankDepositSum = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .filter((mov) => mov > 0)
+  .reduce((sum, curr) => sum + curr, 0);
+
+console.log(bankDepositSum);
+
+//2.
+// const numDeposits1000 = accounts
+//   .flatMap((acc) => acc.movements)
+//   .filter((mov) => mov >= 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+
+console.log(numDeposits1000);
