@@ -80,6 +80,7 @@ dogs.forEach((owner) => {
     : owner;
 });
 
+const dogSarah = dogs.find((dog) => dog.owners.includes("Sarah"));
 //3.
 /*
 Eating an okay amount means the dog's current food
@@ -89,13 +90,52 @@ recommended portion (see hint).
 const ownersEatTooMuch = [];
 const ownersEatTooLittle = [];
 dogs.map((dog) => {
-  if (dog.curFood * 0.9 > dog.recommendedFood) {
-    ownersEatTooLittle.push(dog.owners);
-  } else {
+  if (dog.curFood > dog.recommendedFood) {
     ownersEatTooMuch.push(dog.owners);
+  } else {
+    ownersEatTooLittle.push(dog.owners);
   }
 });
 console.log(ownersEatTooLittle);
 console.log(ownersEatTooMuch);
 
 //4.
+console.log(`${ownersEatTooMuch.join(" and ")}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(" and ")}'s dogs eat too little!`);
+
+//5.
+/*
+Eating an okay amount means the dog's current food
+portion is within a range 10% above and 10% below the
+recommended portion
+*/
+dogs.map((dog, i) => {
+  if (
+    dog.curFood >= dog.recommendedFood - dog.recommendedFood / 10 &&
+    dog.recommendedFood + dog.recommendedFood
+  ) {
+    console.log(`dog num ${i + 1} is eating ok`);
+  } else {
+    console.log(`dog num ${i + 1} is not eating ok`);
+  }
+});
+
+console.log(dogs.some((dog) => dog.curFood === dog.recommendedFood));
+
+//6.
+
+const checkEatingOkay = (dog) =>
+  dog.curFood > dog.recommendedFood * 0.9 &&
+  dog.curFood < dog.recommendedFood * 1.1;
+
+console.log(dogs.some(checkEatingOkay));
+
+//7.
+console.log(dogs.filter(checkEatingOkay));
+
+//8.
+const dogCopySorted = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(dogCopySorted);
