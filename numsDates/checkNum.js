@@ -50,3 +50,17 @@ console.log((2.7).toFixed(0)); //returns str
 const isEven = (n) => n % 2 === 0;
 console.log(isEven(9));
 console.log(isEven(8));
+
+//numeric seperator
+
+const diameter = 2_874_560_000_000; // using _ to separate
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+//BigInt
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(3462893467206920595246748569485n);
+console.log(BigInt(3462893467206920595));
