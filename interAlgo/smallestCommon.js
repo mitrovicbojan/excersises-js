@@ -1,24 +1,22 @@
 function smallestCommons(arr) {
-  // let range = [];
-  // for (let i = arr[0]; i <= arr[1]; i++) {
-  //   range.push(i);
-  // }
-  // console.log(range);
-
-  // let output = range.forEach((item) => {
-  //   if (item % 2 === 0) {
-  //     console.log(item);
-  //   }
-  // });
-
+  //get min and max
   let smallerNum = Math.min(arr[0], arr[1]);
   let largerNum = Math.max(arr[0], arr[1]);
   console.log(smallerNum);
   console.log(largerNum);
-  // range??
-  // for (let i = largerNum; i <= largerNum; i++) {
 
-  // }
+  //range of numbers btw min and max
+  const range = [];
+
+  for (let i = smallerNum; i <= largerNum; i++) {
+    range.push(i);
+  }
+
+  console.log(range);
+
+  const topNum = range.reduce((acc, curr) => acc * curr);
+
+  console.log(topNum);
   return arr;
 }
 
