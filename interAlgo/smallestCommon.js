@@ -15,9 +15,12 @@ function smallestCommons(arr) {
   console.log(range);
 
   const topNum = range.reduce((acc, curr) => acc * curr);
-
-  console.log(topNum);
-  return arr;
+  for (let i = largerNum; i < topNum; i += largerNum) {
+    const divided = range.every((num) => i % num === 0);
+    if (divided) {
+      return i;
+    }
+  }
 }
 
-smallestCommons([1, 5]);
+console.log(smallestCommons([2, 10]));
